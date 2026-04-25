@@ -3,27 +3,14 @@ body {
     color: #ffffff;
 }
 
+/*header {*/
+/*    font-family: "Luckiest Guy", cursive;*/
+/*}*/
+
 #navbar {
     width: calc(100% - 30px);
     height: 60px;
     margin-top: 15px;
-}
-
-.navbar-brand:hover, .navbar-brand {
-    color: #FFCC00;
-}
-
-.logout {
-    background: #FFCC00;
-    border: none;
-    color: #000000;
-}
-
-.logout:hover, .logout:active {
-    background: #FFCC00;
-    color: #000000;
-    border: none;
-    transform: scale(0.9);
 }
 
 #sidebar {
@@ -39,7 +26,7 @@ body {
 
 #sidebar button {
     width: 80%;
-    background: #8C00FF!important;
+    background: #8C00FF;
 }
 
 .content {
@@ -52,6 +39,21 @@ body {
 .custom-box {
     padding: 15px;
     border-radius: 10px;
+}
+
+#dashboardSection .card {
+    min-height: 300px;
+}
+
+#dashboardSection h1 {
+    font-family: "Anton SC", sans-serif;
+    font-size: 50px;
+}
+
+#dashboardSection h2 {
+    font-family: "Anton SC", sans-serif;
+    color: #ffffff!important;
+    font-size: 30px;
 }
 
 .search::placeholder {
