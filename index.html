@@ -27,7 +27,7 @@
 <header id="header" class="d-flex justify-content-center align-items-center z-3 position-relative">
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-black position-fixed top-0 rounded-5  border border-secondary">
     <div class="container-fluid">
-      <h4 class="navbar-brand m-0">BSMS POS</h4>
+      <button class="navbar-brand m-0">BSMS POS</button>
       <div class="d-flex justify-content-center align-items-center">
         <h6 class="m-0">User Name</h6>
         <img src="assets/user.png" style="height: 50px; width: 50px">
@@ -107,6 +107,17 @@
             </p>
           </div>
         </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Place-Order Section  -->
+  <section id="placeOrderSection">
+
+    <div class="container-fluid">
+      <div class="row">
 
       </div>
     </div>
@@ -313,17 +324,16 @@
 
 </main>
 
-
-
 <script src="assets/lib/jquery-4.0.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
 </script>
 
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/SidebarController.js"></script>
 </body>
 </html>

@@ -3,9 +3,43 @@ body {
     color: #ffffff;
 }
 
-/*header {*/
-/*    font-family: "Luckiest Guy", cursive;*/
-/*}*/
+.loginUi h1 {
+    font-family: "Anton SC", sans-serif;
+    font-size: 2rem;
+}
+
+.loginUi {
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+}
+
+body button {
+    transition: all 0.2s ease!important;
+}
+
+body button:hover {
+    scale: 0.95!important;
+}
+
+.loginBtn {
+    --bs-btn-hover-border-color: none;
+    background: #8C00FF;
+}
+
+@media all and (min-width: 1024px) {
+    .login {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+header button {
+    background: transparent;
+    border: none;
+}
 
 #navbar {
     width: calc(100% - 30px);
