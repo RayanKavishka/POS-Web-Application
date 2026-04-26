@@ -240,24 +240,24 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3 d-flex flex-column gap-3 justify-content-center align-items-center rounded-4 p-15">
           <div class="d-flex flex-column gap-3">
             <div class="d-flex gap-3">
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="itemSave" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Save">
                 <i class="bi bi-save text-success fs-1"></i>
               </button>
 
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="itemUpdate" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Update">
                 <i class="bi bi-arrow-repeat text-warning fs-1"></i>
               </button>
             </div>
 
             <div class="d-flex gap-3">
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="itemDelete" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete">
                 <i class="bi bi-trash text-danger fs-1"></i>
               </button>
 
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="itemReset" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Reset">
                 <i class="bi bi-x-circle text-light fs-1"></i>
               </button>
@@ -265,8 +265,8 @@
           </div>
 
           <div class="d-flex bg-black p-3 rounded-4">
-            <input class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input id="itemSearchField" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
+            <button id="itemSearch" class="btn btn-outline-success" type="submit">Search</button>
           </div>
 
         </div>
@@ -285,7 +285,7 @@
           <th scope="col">Qty</th>
         </tr>
         </thead>
-        <tbody id="itemTBody rounded-4">
+        <tbody id="itemTBody" class="rounded-4">
 
         </tbody>
       </table>
@@ -315,7 +315,7 @@
           <th scope="col">Date</th>
         </tr>
         </thead>
-        <tbody id="OrderHistoryTBody rounded-4">
+        <tbody id="OrderHistoryTBody" class="rounded-4">
 
         </tbody>
       </table>

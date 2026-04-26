@@ -43,3 +43,5 @@ class ItemDTO {
         this.#quantity = quantity;
     }
 }
+
+export {ItemDTO};
