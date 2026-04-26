@@ -15,6 +15,9 @@ $('header button').on('click', function () {
 
 
 // Side Bar Navigation
+$('.content').hide();
+$('#dashboardSection').show();
+
 $('aside button').on('click', function () {
     $('.content').hide();
 
