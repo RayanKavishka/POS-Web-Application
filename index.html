@@ -156,24 +156,24 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3 d-flex flex-column gap-3 justify-content-center align-items-center rounded-4 p-15">
           <div class="d-flex flex-column gap-3">
             <div class="d-flex gap-3">
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="customerSave" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Save">
                 <i class="bi bi-save text-success fs-1"></i>
               </button>
 
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="customerUpdate" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Update">
                 <i class="bi bi-arrow-repeat text-warning fs-1"></i>
               </button>
             </div>
 
             <div class="d-flex gap-3">
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="customerDelete" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete">
                 <i class="bi bi-trash text-danger fs-1"></i>
               </button>
 
-              <button class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+              <button id="customerFromReset" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
                       data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Reset">
                 <i class="bi bi-x-circle text-light fs-1"></i>
               </button>
@@ -181,8 +181,8 @@
           </div>
 
           <div class="d-flex bg-black p-3 rounded-4">
-            <input class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input id="searchField" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+            <button id="customerSearch" class="btn btn-outline-success" type="submit">Search</button>
           </div>
         </div>
 
@@ -200,7 +200,7 @@
           <th scope="col">Address</th>
         </tr>
         </thead>
-        <tbody id="customerTBody rounded-4">
+        <tbody id="customerTBody" class="rounded-4">
 
         </tbody>
       </table>
@@ -307,6 +307,7 @@
         <thead class="custom-thead rounded-4">
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">Customer</th>
           <th scope="col">Item</th>
           <th scope="col">Qty</th>
           <th scope="col">Unit Price</th>
@@ -334,6 +335,10 @@
 </script>
 
 <script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/PlaceOrderController.js"></script>
+<script type="module" src="controller/OrderHistoryController.js"></script>
+<script type="module" src="controller/DashboardController.js"></script>
 <script type="module" src="controller/SidebarController.js"></script>
 </body>
 </html>

@@ -43,3 +43,5 @@ class CustomerDTO {
         this.#address = address;
     }
 }
+
+export {CustomerDTO};
