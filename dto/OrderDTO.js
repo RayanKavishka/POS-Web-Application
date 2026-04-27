@@ -2,17 +2,17 @@ class OrderDTO {
     #id;
     #customerId;
     #itemName;
-    #quantity;
     #unitPrice;
+    #quantity;
     #total;
     #date;
 
-    constructor(id, customerId, itemName, quantity, unitPrice, total, date) {
+    constructor(id, customerId, itemName, unitPrice, quantity, total, date) {
         this.#id = id;
         this.#customerId = customerId;
         this.#itemName = itemName;
-        this.#quantity = quantity;
         this.#unitPrice = unitPrice;
+        this.#quantity = quantity;
         this.#total = total;
         this.#date = date;
     }
@@ -73,3 +73,5 @@ class OrderDTO {
         this.#date = date;
     }
 }
+
+export {OrderDTO};

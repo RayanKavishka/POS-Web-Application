@@ -151,3 +151,5 @@ const cleanItemForm = () => {
     $('#itemPriceField').val("");
     $('#itemQtyField').val("");
 };
+
+export {loadItemTbl};

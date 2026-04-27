@@ -49,4 +49,10 @@ const getItemDB = () => {
     return itemDB;
 };
 
-export {getItemById, getItemByIndex, saveItem, updateItem, deleteItem, getItemDB, searchItem};
+// Reduce item Qty after ordered
+const reduceItemQty = (itemId, orderedQuantity) => {
+    let orderedItem = itemDB.find((item) => item.id === itemId);
+    orderedItem.quantity = orderedItem.quantity - orderedQuantity;
+};
+
+export {getItemById, getItemByIndex, saveItem, updateItem, deleteItem, getItemDB, searchItem, reduceItemQty};

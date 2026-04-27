@@ -117,29 +117,29 @@
   <section id="placeOrderSection" class="content mt-15">
 
     <div class="container-fluid">
-      <div class="row g-4">
+      <div class="row g-3">
 
         <!-- Customer Form -->
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
           <div class="custom-box rounded-4 bg-black orderForm">
-            <form class="w-100">
+            <form class="w-100 d-flex flex-column gap-4">
 
               <div class="mb-3 d-flex gap-3">
                 <label for="customerIdLabel" class="form-label">ID</label>
-                <input id="customerIdLabel" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
-                <button id="customerSearchForOrder" class="btn btn-outline-success" type="submit">Search</button>
+                <input id="customerIdLabel" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+                <button id="customerSearchForOrder" class="btn btn-outline-warning rounded-5" type="button">Search</button>
               </div>
               <div class="mb-3 d-flex gap-3">
                 <label for="customerNameLabel" class="form-label text-warning">Customer Name: </label>
-                <span class="text-white" id="customerNameLabel">Customer Name</span>
+                <span class="text-white" id="customerNameLabel">-</span>
               </div>
               <div class="mb-3 d-flex gap-3">
                 <label for="customerMobileLabel" class="form-label text-warning">Mobile: </label>
-                <span class="text-white" id="customerMobileLabel">Customer Mobile</span>
+                <span class="text-white" id="customerMobileLabel">-</span>
               </div>
               <div class="mb-3 d-flex gap-3">
                 <label for="customerAddressLabel" class="form-label text-warning">Address: </label>
-                <span class="text-white" id="customerAddressLabel">Customer Address</span>
+                <span class="text-white" id="customerAddressLabel">-</span>
               </div>
 
             </form>
@@ -154,14 +154,12 @@
               <div class="d-flex flex-column gap-3">
 
                 <div class="btn-group">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  <button id="dropDownBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     Choose Items
                   </button>
 
                   <ul class="dropdown-menu bg-dark">
-                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
+
                   </ul>
                 </div>
 
@@ -169,29 +167,31 @@
                   <div class="d-flex flex-column gap-3">
                     <div class="d-flex gap-2">
                       <label class="form-label text-warning">ID:</label>
-                      <span class="text-white">1</span>
+                      <span id="itemIdLabel" class="text-white">-</span>
                     </div>
                     <div class="d-flex gap-2">
                       <label class="form-label text-warning">Price(Rs):</label>
-                      <span class="text-white">200</span>
+                      <span id="itemPriceLabel" class="text-white">-</span>
                     </div>
                     <div class="d-flex gap-2">
                       <label class="form-label text-warning">Available Qty:</label>
-                      <span class="text-white">10</span>
+                      <span id="itemQtyLabel" class="text-white">-</span>
                     </div>
+
+                    <button id="placeOrderBtn" type="button" class="btn btn-info rounded-5">Place Order</button>
                   </div>
 
                   <div class="d-flex flex-column gap-3 align-items-end">
                     <div class="d-flex gap-2">
                       <label class="form-label text-warning" for="neededQty">Qty:</label>
-                      <input id="neededQty" class="form-control me-2 bg-dark text-white search align-self-end" type="number">
+                      <input id="neededQty" class="form-control me-2 rounded-5 bg-dark text-white search align-self-end" placeholder="Needed Qty" type="number">
                     </div>
 
-                    <button type="button" class="btn btn-info">Add to Cart</button>
+                    <button id="addToCartBtn" type="button" class="btn btn-warning rounded-5">Add to Cart</button>
 
                     <div class="d-flex flex-column">
                       <label class="form-label text-white" for="total">Total:</label>
-                      <span id="total" class="fs-1">29000.00</span>
+                      <span id="total" class="fs-1">0</span>
                     </div>
                   </div>
                 </div>
@@ -204,21 +204,29 @@
 
         <!-- Item Cart Table -->
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-black p-3 mt-3 rounded-4">
-          <table class="table table-dark text-white table-bordered border-secondary w-100 text-center">
-            <thead class="custom-thead rounded-4">
-            <tr>
-              <th scope="col">Item</th>
-              <th scope="col">Price</th>
-              <th scope="col">Qty</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Status</th>
-            </tr>
-            </thead>
-            <tbody id="cartTBody" class="rounded-4">
 
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+
+              <thead class="custom-thead">
+              <tr>
+                <th class="text-nowrap">Item</th>
+                <th class="text-nowrap">Price</th>
+                <th>Qty</th>
+                <th class="text-nowrap">Amount</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+
+              <tbody id="cartTBody">
+
+              </tbody>
+
+            </table>
+          </div>
+
         </div>
+
 
       </div>
     </div>
@@ -236,19 +244,19 @@
           <form class="w-100">
             <div class="mb-3 d-flex gap-3">
               <label for="customerIdField" class="form-label">ID</label>
-              <input type="number" class="form-control bg-dark text-white border-secondary" id="customerIdField">
+              <input type="number" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerIdField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="customerNameField" class="form-label">Name</label>
-              <input type="text" class="form-control bg-dark text-white border-secondary" id="customerNameField">
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerNameField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="customerMobileField" class="form-label">Mobile</label>
-              <input type="text" class="form-control bg-dark text-white border-secondary" id="customerMobileField">
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerMobileField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="customerAddressField" class="form-label">Address</label>
-              <textarea class="form-control bg-dark text-white border-secondary" id="customerAddressField" style="height: 100px; resize: none"></textarea>
+              <textarea class="form-control rounded-5 bg-dark text-white border-secondary" id="customerAddressField" style="height: 100px; resize: none"></textarea>
             </div>
           </form>
         </div>
@@ -282,30 +290,30 @@
           </div>
 
           <div class="d-flex bg-black p-3 rounded-4">
-            <input id="searchField" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
-            <button id="customerSearch" class="btn btn-outline-success" type="submit">Search</button>
+            <input id="searchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+            <button id="customerSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Table -->
     <div class="bg-black p-3 mt-3 rounded-4">
-      <table class="table table-dark text-white table-bordered border-secondary w-100 text-center">
-        <thead class="custom-thead rounded-4">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Mobile</th>
-          <th scope="col">Address</th>
-        </tr>
-        </thead>
-        <tbody id="customerTBody" class="rounded-4">
-
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th class="d-none d-md-table-cell">Address</th>
+          </tr>
+          </thead>
+          <tbody id="customerTBody"></tbody>
+        </table>
+      </div>
     </div>
+
 
   </section>
 
@@ -320,19 +328,19 @@
           <form class="w-100">
             <div class="mb-3 d-flex gap-3">
               <label for="itemIdField" class="form-label">ID</label>
-              <input type="number" class="form-control bg-dark text-white border-secondary" id="itemIdField">
+              <input type="number" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemIdField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="itemNameField" class="form-label">Name</label>
-              <input type="text" class="form-control bg-dark text-white border-secondary" id="itemNameField">
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemNameField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="itemPriceField" class="form-label">Price</label>
-              <input type="text" class="form-control bg-dark text-white border-secondary" id="itemPriceField">
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemPriceField">
             </div>
             <div class="mb-3 d-flex gap-3">
               <label for="itemQtyField" class="form-label">Qty</label>
-              <input type="text" class="form-control bg-dark text-white border-secondary" id="itemQtyField">
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemQtyField">
             </div>
           </form>
         </div>
@@ -366,8 +374,8 @@
           </div>
 
           <div class="d-flex bg-black p-3 rounded-4">
-            <input id="itemSearchField" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
-            <button id="itemSearch" class="btn btn-outline-success" type="submit">Search</button>
+            <input id="itemSearchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
+            <button id="itemSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
           </div>
 
         </div>
@@ -375,21 +383,20 @@
       </div>
     </div>
 
-    <!-- Table -->
     <div class="bg-black p-3 mt-3 rounded-4">
-      <table class="table table-dark text-white table-bordered border-secondary w-100 text-center">
-        <thead class="custom-thead rounded-4">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Qty</th>
-        </tr>
-        </thead>
-        <tbody id="itemTBody" class="rounded-4">
-
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th class="text-nowrap">Price</th>
+            <th>Qty</th>
+          </tr>
+          </thead>
+          <tbody id="itemTBody"></tbody>
+        </table>
+      </div>
     </div>
 
   </section>
@@ -398,29 +405,29 @@
   <section id="OrderHistorySection" class="content mt-15">
 
     <div class="d-flex bg-black p-3 rounded-4">
-      <input class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Order by Date" aria-label="Search"/>
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Order by Date" aria-label="Search"/>
+      <button class="btn btn-outline-warning rounded-5" type="submit">Search</button>
     </div>
 
-    <!-- Table -->
     <div class="bg-black p-3 mt-3 rounded-4">
-      <table class="table table-dark text-white table-bordered border-secondary w-100 text-center">
-        <thead class="custom-thead rounded-4">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Customer</th>
-          <th scope="col">Item</th>
-          <th scope="col">Qty</th>
-          <th scope="col">Unit Price</th>
-          <th scope="col">Total</th>
-          <th scope="col">Date</th>
-        </tr>
-        </thead>
-        <tbody id="OrderHistoryTBody" class="rounded-4">
-
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Item</th>
+            <th class="text-nowrap">Unit Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th class="d-none d-md-table-cell">Date</th>
+          </tr>
+          </thead>
+          <tbody id="OrderHistoryTBody"></tbody>
+        </table>
+      </div>
     </div>
+
 
   </section>
 
