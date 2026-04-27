@@ -95,7 +95,20 @@ header button {
     opacity: 0.5;
 }
 
+.orderForm {
+    min-height: 230px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #8C00FF !important;
+    color: #ffffff !important;
+}
+
 /*Table*/
 .custom-thead th {
     color: #FFCC00;
+}
+
+#total {
+    color: #8C00FF !important;
 }

@@ -114,10 +114,111 @@
   </section>
 
   <!-- Place-Order Section  -->
-  <section id="placeOrderSection">
+  <section id="placeOrderSection" class="content mt-15">
 
     <div class="container-fluid">
-      <div class="row">
+      <div class="row g-4">
+
+        <!-- Customer Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+          <div class="custom-box rounded-4 bg-black orderForm">
+            <form class="w-100">
+
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerIdLabel" class="form-label">ID</label>
+                <input id="customerIdLabel" class="form-control me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+                <button id="customerSearchForOrder" class="btn btn-outline-success" type="submit">Search</button>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerNameLabel" class="form-label text-warning">Customer Name: </label>
+                <span class="text-white" id="customerNameLabel">Customer Name</span>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerMobileLabel" class="form-label text-warning">Mobile: </label>
+                <span class="text-white" id="customerMobileLabel">Customer Mobile</span>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerAddressLabel" class="form-label text-warning">Address: </label>
+                <span class="text-white" id="customerAddressLabel">Customer Address</span>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Item Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+          <div class="custom-box rounded-4 bg-black orderForm">
+            <form class="w-100">
+
+              <div class="d-flex flex-column gap-3">
+
+                <div class="btn-group">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Choose Items
+                  </button>
+
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Menu item</a></li>
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex flex-column gap-3">
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">ID:</label>
+                      <span class="text-white">1</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">Price(Rs):</label>
+                      <span class="text-white">200</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">Available Qty:</label>
+                      <span class="text-white">10</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column gap-3 align-items-end">
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning" for="neededQty">Qty:</label>
+                      <input id="neededQty" class="form-control me-2 bg-dark text-white search align-self-end" type="number">
+                    </div>
+
+                    <button type="button" class="btn btn-info">Add to Cart</button>
+
+                    <div class="d-flex flex-column">
+                      <label class="form-label text-white" for="total">Total:</label>
+                      <span id="total" class="fs-1">29000.00</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Item Cart Table -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-black p-3 mt-3 rounded-4">
+          <table class="table table-dark text-white table-bordered border-secondary w-100 text-center">
+            <thead class="custom-thead rounded-4">
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Price</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody id="cartTBody" class="rounded-4">
+
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </div>
