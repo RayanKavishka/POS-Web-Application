@@ -37,6 +37,6 @@ $('aside button').on('click', function () {
         $('#OrderHistorySection').show();
 
     } else {
-        window.location.replace('login.html');
+        window.location.replace('index.html');
     }
 });

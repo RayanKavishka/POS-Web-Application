@@ -33,3 +33,6 @@ class UserDTO {
         this.#password = password;
     }
 }
+
+
+export {UserDTO};

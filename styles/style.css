@@ -13,6 +13,10 @@ body {
     font-size: 1.5rem;
 }
 
+.login {
+    height: 550px!important;
+}
+
 body button {
     transition: all 0.2s ease!important;
 }
