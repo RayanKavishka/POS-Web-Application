@@ -39,7 +39,7 @@ $('#loginBtn').on('click', function () {
         Swal.fire({icon: "error", title: "Oops! Something Went Wrong", background: "#2c2c2c", color: "#f1f1f1"});
 
     } else {
-        loginToSystem();
+        loginToSystem(userName);
         cleanLogInForm();
     }
 });
@@ -53,7 +53,7 @@ $('#notHaveAccBtn').on('click', function () {
 
 
 // Dashboard Load
-const loginToSystem = () => {
+const loginToSystem = (userName) => {
     $('#signupSection').addClass('d-none');
     $('#loginSection').addClass('d-none');
 
@@ -64,6 +64,7 @@ const loginToSystem = () => {
 
     $('.content').hide();
     $('#dashboardSection').show();
+    $('#userNameInHeader').text(userName);
 };
 
 
