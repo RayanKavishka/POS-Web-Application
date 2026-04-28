@@ -2,6 +2,9 @@ import {saveUserAccount, checkValidUser} from "../model/LoginModel.js"
 
 
 // Login page show
+$('#sidebar').addClass('d-none');
+$('#header').addClass('d-none');
+$('.content').hide();
 $('#signupSection').addClass('d-none');
 $('#loginSection').removeClass('d-none');
 
@@ -42,9 +45,25 @@ $('#loginBtn').on('click', function () {
 });
 
 
+// Do have acc (signUpBtn) handle
+$('#notHaveAccBtn').on('click', function () {
+    $('#signupSection').removeClass('d-none');
+    $('#loginSection').addClass('d-none');
+});
+
+
 // Dashboard Load
 const loginToSystem = () => {
-    window.location.replace('bsms.html');
+    $('#signupSection').addClass('d-none');
+    $('#loginSection').addClass('d-none');
+
+    $('#sidebar').removeClass('d-none');
+    $('#header').removeClass('d-none');
+    $('#sidebar').addClass('d-flex');
+    $('#header').addClass('d-flex');
+
+    $('.content').hide();
+    $('#dashboardSection').show();
 };
 
 

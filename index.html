@@ -19,10 +19,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
 
-<main>
+<!-- Header -->
+<header id="header" class="d-flex justify-content-center align-items-center z-3 position-relative">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-black position-fixed top-0 rounded-5  border border-secondary">
+    <div class="container-fluid">
+      <button class="navbar-brand m-0">BSMS POS</button>
+      <div class="d-flex justify-content-center align-items-center">
+        <h6 class="m-0">User Name</h6>
+        <img src="assets/user.png" style="height: 50px; width: 50px">
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="systemMain">
+  <!-- Side Bar  -->
+  <aside id="sidebar" class="position-fixed bottom-0 bg-black rounded-4 d-flex justify-content-center align-items-start text-center border border-secondary">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item mt-5">
+        <button type="button" class="btn rounded-4 text-white">Dashboard</button>
+      </li>
+      <li class="nav-item mt-5">
+        <button type="button" class="btn rounded-4 text-white">Place Order</button>
+      </li>
+      <li class="nav-item mt-5">
+        <button type="button" class="btn rounded-4 text-white">Customers</button>
+      </li>
+      <li class="nav-item mt-5">
+        <button type="button" class="btn rounded-4 text-white">Items</button>
+      </li>
+      <li class="nav-item mt-5">
+        <button type="button" class="btn rounded-4 text-white">Order History</button>
+      </li>
+      <li class="nav-item mt-5">
+        <button type="button" class="btn btn-danger rounded-4 logout"
+                style="border-color: #ffffff; background: #FFCC00; color: #000000">Log out</button>
+      </li>
+    </ul>
+  </aside>
+
   <!-- Sign up Section -->
   <section id="signupSection" class="loginUi d-flex flex-column justify-content-center align-items-center vh-100 p-3">
 
@@ -113,12 +152,393 @@
     </div>
 
   </section>
+
+  <!-- Dashboard Section -->
+  <section id="dashboardSection" class="content mt-15">
+
+    <div class="container-fluid text-center">
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+          <div class="card rounded-4 p-3 bg-black border border-warning" style="color: #5BEE2A">
+            <h1>Rs 10000</h1>
+            <h2 class="mt-4">Today Total Sales</h2>
+            <p>
+              Represents the total revenue generated from all sales made today. This helps track daily business performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+          <div class="card rounded-4 p-3 bg-black border border-warning" style="color: #D67BFF">
+            <h1>2500+</h1>
+            <h2 class="mt-4">Total Items</h2>
+            <p>
+              Shows the total number of products currently available in your inventory or system.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+          <div class="card rounded-4 p-3 bg-black border border-warning"  style="color: #FF383C">
+            <h1>150+</h1>
+            <h2 class="mt-4">Total Customers</h2>
+            <p>
+              Indicates the total number of registered or active customers who have interacted with your business.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+          <div class="card rounded-4 p-3 bg-black border border-warning"  style="color: #45FFCA">
+            <h1>36</h1>
+            <h2 class="mt-4">Today Total Orders</h2>
+            <p>
+              Displays the total number of orders placed by customers today, giving insight into daily activity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Place-Order Section  -->
+  <section id="placeOrderSection" class="content mt-15">
+
+    <div class="container-fluid">
+      <div class="row g-3">
+
+        <!-- Customer Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+          <div class="custom-box rounded-4 bg-black orderForm">
+            <form class="w-100 d-flex flex-column gap-4">
+
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerIdLabel" class="form-label">ID</label>
+                <input id="customerIdLabel" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+                <button id="customerSearchForOrder" class="btn btn-outline-warning rounded-5" type="button">Search</button>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerNameLabel" class="form-label text-warning">Customer Name: </label>
+                <span class="text-white" id="customerNameLabel">-</span>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerMobileLabel" class="form-label text-warning">Mobile: </label>
+                <span class="text-white" id="customerMobileLabel">-</span>
+              </div>
+              <div class="mb-3 d-flex gap-3">
+                <label for="customerAddressLabel" class="form-label text-warning">Address: </label>
+                <span class="text-white" id="customerAddressLabel">-</span>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Item Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+          <div class="custom-box rounded-4 bg-black orderForm">
+            <form class="w-100">
+
+              <div class="d-flex flex-column gap-3">
+
+                <div class="btn-group">
+                  <button id="dropDownBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Choose Items
+                  </button>
+
+                  <ul class="dropdown-menu bg-dark">
+
+                  </ul>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex flex-column gap-3">
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">ID:</label>
+                      <span id="itemIdLabel" class="text-white">-</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">Price(Rs):</label>
+                      <span id="itemPriceLabel" class="text-white">-</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning">Available Qty:</label>
+                      <span id="itemQtyLabel" class="text-white">-</span>
+                    </div>
+
+                    <button id="placeOrderBtn" type="button" class="btn btn-info rounded-5">Place Order</button>
+                  </div>
+
+                  <div class="d-flex flex-column gap-3 align-items-end">
+                    <div class="d-flex gap-2">
+                      <label class="form-label text-warning" for="neededQty">Qty:</label>
+                      <input id="neededQty" class="form-control me-2 rounded-5 bg-dark text-white search align-self-end" placeholder="Needed Qty" type="number">
+                    </div>
+
+                    <button id="addToCartBtn" type="button" class="btn btn-warning rounded-5">Add to Cart</button>
+
+                    <div class="d-flex flex-column">
+                      <label class="form-label text-white" for="total">Total:</label>
+                      <span id="total" class="fs-1">0</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Item Cart Table -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-black p-3 mt-3 rounded-4">
+
+          <div class="table-responsive">
+            <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+
+              <thead class="custom-thead">
+              <tr>
+                <th class="text-nowrap">Item</th>
+                <th class="text-nowrap">Price</th>
+                <th>Qty</th>
+                <th class="text-nowrap">Amount</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+
+              <tbody id="cartTBody">
+
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Customer Section -->
+  <section id="customerSection" class="content mt-15">
+
+    <div class="container-fluid text-center gy-3">
+      <div class="row">
+
+        <!-- Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 col-xxl-9 bg-black custom-box rounded-4">
+          <form class="w-100">
+            <div class="mb-3 d-flex gap-3">
+              <label for="customerIdField" class="form-label">ID</label>
+              <input type="number" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerIdField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="customerNameField" class="form-label">Name</label>
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerNameField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="customerMobileField" class="form-label">Mobile</label>
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="customerMobileField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="customerAddressField" class="form-label">Address</label>
+              <textarea class="form-control rounded-5 bg-dark text-white border-secondary" id="customerAddressField" style="height: 100px; resize: none"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Buttons -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3 d-flex flex-column gap-3 justify-content-center align-items-center rounded-4 p-15">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3">
+              <button id="customerSave" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Save">
+                <i class="bi bi-save text-success fs-1"></i>
+              </button>
+
+              <button id="customerUpdate" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Update">
+                <i class="bi bi-arrow-repeat text-warning fs-1"></i>
+              </button>
+            </div>
+
+            <div class="d-flex gap-3">
+              <button id="customerDelete" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete">
+                <i class="bi bi-trash text-danger fs-1"></i>
+              </button>
+
+              <button id="customerFromReset" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Reset">
+                <i class="bi bi-x-circle text-light fs-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex bg-black p-3 rounded-4">
+            <input id="searchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+            <button id="customerSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bg-black p-3 mt-3 rounded-4">
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th class="d-none d-md-table-cell">Address</th>
+          </tr>
+          </thead>
+          <tbody id="customerTBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- Item Section -->
+  <section id="ItemSection" class="content mt-15">
+
+    <div class="container-fluid text-center">
+      <div class="row">
+
+        <!-- Form -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 col-xxl-9 bg-black custom-box rounded-4">
+          <form class="w-100">
+            <div class="mb-3 d-flex gap-3">
+              <label for="itemIdField" class="form-label">ID</label>
+              <input type="number" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemIdField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="itemNameField" class="form-label">Name</label>
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemNameField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="itemPriceField" class="form-label">Price</label>
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemPriceField">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="itemQtyField" class="form-label">Qty</label>
+              <input type="text" class="form-control rounded-5 bg-dark text-white border-secondary" id="itemQtyField">
+            </div>
+          </form>
+        </div>
+
+        <!-- Buttons -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3 d-flex flex-column gap-3 justify-content-center align-items-center rounded-4 p-15">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3">
+              <button id="itemSave" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Save">
+                <i class="bi bi-save text-success fs-1"></i>
+              </button>
+
+              <button id="itemUpdate" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Update">
+                <i class="bi bi-arrow-repeat text-warning fs-1"></i>
+              </button>
+            </div>
+
+            <div class="d-flex gap-3">
+              <button id="itemDelete" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Delete">
+                <i class="bi bi-trash text-danger fs-1"></i>
+              </button>
+
+              <button id="itemReset" class="btn bg-black square-btn rounded-4" style="width: 100px; height: 100px"
+                      data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Reset">
+                <i class="bi bi-x-circle text-light fs-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex bg-black p-3 rounded-4">
+            <input id="itemSearchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
+            <button id="itemSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bg-black p-3 mt-3 rounded-4">
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th class="text-nowrap">Price</th>
+            <th>Qty</th>
+          </tr>
+          </thead>
+          <tbody id="itemTBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Order History Section -->
+  <section id="OrderHistorySection" class="content mt-15">
+
+    <div class="d-flex bg-black p-3 rounded-4">
+      <input class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Order by Date" aria-label="Search"/>
+      <button class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+    </div>
+
+    <div class="bg-black p-3 mt-3 rounded-4">
+      <div class="table-responsive">
+        <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
+          <thead class="custom-thead">
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Item</th>
+            <th class="text-nowrap">Unit Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th class="d-none d-md-table-cell">Date</th>
+          </tr>
+          </thead>
+          <tbody id="OrderHistoryTBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </section>
+
 </main>
 
 <script src="assets/lib/jquery-4.0.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+</script>
+
 <script type="module" src="controller/LoginController.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/PlaceOrderController.js"></script>
+<script type="module" src="controller/OrderHistoryController.js"></script>
+<script type="module" src="controller/DashboardController.js"></script>
+<script type="module" src="controller/SidebarController.js"></script>
 </body>
 </html>

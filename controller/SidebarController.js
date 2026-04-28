@@ -7,6 +7,7 @@ $('header button').on('click', function () {
     if (isActive) {
         $('#sidebar').addClass('d-flex').css({display: ''});
         $('.content').css({marginLeft: '280px'});
+
     } else {
         $('#sidebar').removeClass('d-flex').css({display: 'none'});
         $('.content').css({marginLeft: '15px'});
@@ -15,9 +16,6 @@ $('header button').on('click', function () {
 
 
 // Side Bar Navigation
-$('.content').hide();
-$('#dashboardSection').show();
-
 $('aside button').on('click', function () {
     $('.content').hide();
 
@@ -37,6 +35,10 @@ $('aside button').on('click', function () {
         $('#OrderHistorySection').show();
 
     } else {
-        window.location.replace('index.html');
+        $('#sidebar').addClass('d-none');
+        $('#header').addClass('d-none');
+        $('.content').hide();
+        $('#signupSection').addClass('d-none');
+        $('#loginSection').removeClass('d-none');
     }
 });
