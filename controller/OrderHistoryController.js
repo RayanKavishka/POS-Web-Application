@@ -72,7 +72,7 @@ $('#orderRefreshBtn').on('click', function () {
 
         $('#OrderHistoryTBody').append(newRow);
     });
-
 });
+
 
 export {saveOrder};

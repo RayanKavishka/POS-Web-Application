@@ -144,6 +144,18 @@ const loadTblSearchedItem = (searchedItems) => {
 };
 
 
+// Handle item table refresh
+$('#itemRefreshBtn').on('click', function () {
+    $('#itemSearchField').val("");
+    $('#itemTBody').empty();
+
+    getItemDB().forEach((item) => {
+        let newRow = `<tr> <td>${item.id}</td> <td>${item.name}</td> <td>${item.price}</td> <td>${item.quantity}</td> </tr>`
+        $('#itemTBody').append(newRow);
+    });
+});
+
+
 // Item form clear
 const cleanItemForm = () => {
     $('#itemIdField').val("");

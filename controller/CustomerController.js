@@ -145,6 +145,18 @@ const loadTblSearchedCustomers = (searchedCustomers) => {
 };
 
 
+// Handle customer table refresh
+$('#customerRefreshBtn').on('click', function () {
+    $('#searchField').val("");
+    $('#customerTBody').empty();
+
+    getCustomerDB().forEach((customer) => {
+        let newRow = `<tr> <td>${customer.id}</td> <td>${customer.name}</td> <td>${customer.mobile}</td> <td>${customer.address}</td> </tr>`
+        $('#customerTBody').append(newRow);
+    });
+});
+
+
 // Customer form clear
 const cleanCustomerForm = () => {
     $('#customerIdField').val("");
