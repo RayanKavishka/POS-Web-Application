@@ -41,6 +41,7 @@ $('aside button').on('click', function () {
         $('#OrderHistorySection').show();
 
     } else {
+        // Log out handle
         $('#sidebar').addClass('d-none');
         $('#header').addClass('d-none');
         $('.content').hide();
