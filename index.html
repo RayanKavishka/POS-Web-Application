@@ -65,7 +65,7 @@
   <!-- Sign up Section -->
   <section id="signupSection" class="loginUi d-flex flex-column justify-content-center align-items-center vh-100 p-3">
 
-    <div class="login bg-black p-5 rounded-5 container-fluid d-flex flex-column gap-3 justify-content-center align-items-center">
+    <div class="login bg-black border border-light p-5 rounded-5 container-fluid d-flex flex-column gap-3 justify-content-center align-items-center">
 
       <h1>Book Shop POS</h1>
 
@@ -115,7 +115,7 @@
   <!-- Log In Section -->
   <section id="loginSection" class="loginUi d-flex justify-content-center align-items-center vh-100 p-3">
 
-    <div class="login bg-black p-5 rounded-5 container-fluid d-flex flex-column gap-3 justify-content-center align-items-center">
+    <div class="login bg-black border border-light p-5 rounded-5 container-fluid d-flex flex-column gap-3 justify-content-center align-items-center">
 
       <h1>Book Shop POS</h1>
 
@@ -161,7 +161,7 @@
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
           <div class="card rounded-4 p-3 bg-black border border-warning" style="color: #5BEE2A">
-            <h1>Rs 10000</h1>
+            <h1 id="todaySales">Rs 0</h1>
             <h2 class="mt-4">Today Total Sales</h2>
             <p class="text-white">
               Represents the total revenue generated from all sales made today. This helps track daily business performance.
@@ -171,7 +171,7 @@
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
           <div class="card rounded-4 p-3 bg-black border border-warning" style="color: #D67BFF">
-            <h1>2500+</h1>
+            <h1 id="totalItems">0</h1>
             <h2 class="mt-4">Total Items</h2>
             <p class="text-white">
               Shows the total number of products currently available in your inventory or system.
@@ -181,7 +181,7 @@
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
           <div class="card rounded-4 p-3 bg-black border border-warning"  style="color: #FF383C">
-            <h1>150+</h1>
+            <h1 id="totalCustomers">0</h1>
             <h2 class="mt-4">Total Customers</h2>
             <p class="text-white">
               Indicates the total number of registered or active customers who have interacted with your business.
@@ -191,12 +191,16 @@
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
           <div class="card rounded-4 p-3 bg-black border border-warning"  style="color: #45FFCA">
-            <h1>36</h1>
+            <h1 id="todayOrders">0</h1>
             <h2 class="mt-4">Today Total Orders</h2>
             <p class="text-white">
               Displays the total number of orders placed by customers today, giving insight into daily activity.
             </p>
           </div>
+        </div>
+
+        <div id="dashBoardImg" class="img-fluid mt-3 p-0 rounded-5 border border-light">
+          <span>Book Shop Management POS System</span>
         </div>
 
       </div>
@@ -379,18 +383,18 @@
               </button>
             </div>
           </div>
-
-          <div class="d-flex bg-black p-3 rounded-4">
-            <input id="searchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
-            <button id="customerSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
-            <button id="customerRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
-          </div>
         </div>
 
       </div>
     </div>
 
-    <div class="bg-black p-3 mt-3 rounded-4">
+    <div class="d-flex bg-black p-3 mt-3 rounded-4">
+      <input id="searchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
+      <button id="customerSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+      <button id="customerRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
+    </div>
+
+    <div class="bg-black p-3 rounded-4">
       <div class="table-responsive">
         <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
           <thead class="custom-thead">
@@ -465,18 +469,18 @@
             </div>
           </div>
 
-          <div class="d-flex bg-black p-3 rounded-4">
-            <input id="itemSearchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
-            <button id="itemSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
-            <button id="itemRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
-          </div>
-
         </div>
 
       </div>
     </div>
 
-    <div class="bg-black p-3 mt-3 rounded-4">
+    <div class="d-flex bg-black p-3 mt-3 rounded-4">
+      <input id="itemSearchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
+      <button id="itemSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+      <button id="itemRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
+    </div>
+
+    <div class="bg-black p-3 rounded-4">
       <div class="table-responsive">
         <table class="table table-dark text-white table-bordered border-secondary w-100 text-center align-middle small">
           <thead class="custom-thead">

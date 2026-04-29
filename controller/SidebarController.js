@@ -1,3 +1,6 @@
+import {loadDataInCard} from "./DashboardController.js";
+
+
 // Side Bar Showing Logic
 let isActive = true;
 
@@ -26,6 +29,7 @@ $('aside button').on('click', function () {
     $('.content').hide();
 
     if ($(this).text() === "Dashboard") {
+        loadDataInCard();
         $('#dashboardSection').show();
 
     } else if ($(this).text() === "Place Order") {

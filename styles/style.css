@@ -1,6 +1,7 @@
 body {
     background: #222222;
     color: #ffffff;
+    margin: 0;
 }
 
 .loginUi h1 {
@@ -9,6 +10,12 @@ body {
 }
 
 .loginUi {
+    width: 100vw;
+    background: url("../assets/loginImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     font-family: "Anton", sans-serif;
     font-size: 1.5rem;
 }
@@ -92,6 +99,21 @@ header button {
     font-family: "Anton SC", sans-serif;
     color: #ffffff!important;
     font-size: 30px;
+}
+
+#dashBoardImg {
+    height: calc(100vh - 420px)!important;
+
+    background: url("../assets/dashboardImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: opacity(0.7);
+}
+
+#dashBoardImg span {
+    font-family: "Anton SC", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 7rem);
 }
 
 .search::placeholder {
