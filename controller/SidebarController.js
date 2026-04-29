@@ -5,8 +5,14 @@ $('header button').on('click', function () {
     isActive = !isActive;
 
     if (isActive) {
-        $('#sidebar').addClass('d-flex').css({display: ''});
-        $('.content').css({marginLeft: '280px'});
+        if (!(window.innerWidth < 992)) {
+            $('#sidebar').addClass('d-flex').css({display: ''});
+            $('.content').css({marginLeft: '280px'});
+
+        } else {
+            $('#sidebar').addClass('d-flex').css({display: '', zIndex: 1005});
+            $('.content').css({marginLeft: '15px'});
+        }
 
     } else {
         $('#sidebar').removeClass('d-flex').css({display: 'none'});
@@ -40,5 +46,14 @@ $('aside button').on('click', function () {
         $('.content').hide();
         $('#signupSection').addClass('d-none');
         $('#loginSection').removeClass('d-none');
+    }
+});
+
+
+// Responsive aside handle
+$(window).on('resize', function () {
+    if (window.innerWidth < 992) {
+        $('.content').css({ marginLeft: '15px' });
+        $('#sidebar').css({ zIndex: 1000 });
     }
 });
