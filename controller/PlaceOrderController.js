@@ -4,6 +4,7 @@ import {ItemCardDTO} from "../dto/ItemCardDTO.js";
 import {OrderDTO} from "../dto/OrderDTO.js";
 import {saveOrder} from "./OrderHistoryController.js";
 import {loadItemTbl} from "./ItemController.js";
+import {orderDB} from "../db/db.js";
 
 
 // Customer search
@@ -190,7 +191,7 @@ const placeOrder = (cusId, cartItems) => {
     cartItems.forEach((item) => {
         let orderDTO = new OrderDTO(
             orderId,
-            cusId,
+            getCustomerById(cusId).name,
             item.itemName,
             item.unitPrice,
             item.quantity,
@@ -198,7 +199,9 @@ const placeOrder = (cusId, cartItems) => {
             new Date().toLocaleDateString()
         );
 
-        saveOrder(orderDTO);
+        orderDB.push(orderDTO);
+
+        saveOrder();
         reduceItemQty(item.itemId, item.quantity);
     });
 };

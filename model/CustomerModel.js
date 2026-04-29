@@ -17,6 +17,7 @@ const saveCustomer = (cusId, cusName, cusMobile, cusAddress) => {
     customerDB.push(newCustomer);
 };
 
+// Update customer
 const updateCustomer = (cusId, cusName, cusMobile, cusAddress) => {
     let customer = customerDB.find((cus) => cus.id === cusId);
 
@@ -27,6 +28,7 @@ const updateCustomer = (cusId, cusName, cusMobile, cusAddress) => {
     }
 };
 
+// Delete customer from DB
 const deleteCustomer = (cusId) => {
     let customerIndex = customerDB.findIndex((cus) => cus.id === cusId);
 

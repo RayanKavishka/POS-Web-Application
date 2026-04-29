@@ -1,15 +1,15 @@
 class OrderDTO {
     #id;
-    #customerId;
+    #customerName;
     #itemName;
     #unitPrice;
     #quantity;
     #total;
     #date;
 
-    constructor(id, customerId, itemName, unitPrice, quantity, total, date) {
+    constructor(id, customerName, itemName, unitPrice, quantity, total, date) {
         this.#id = id;
-        this.#customerId = customerId;
+        this.#customerName = customerName;
         this.#itemName = itemName;
         this.#unitPrice = unitPrice;
         this.#quantity = quantity;
@@ -25,12 +25,12 @@ class OrderDTO {
         this.#id = id;
     }
 
-    get customerId() {
-        return this.#customerId;
+    get customerName() {
+        return this.#customerName;
     }
 
-    set customerId(customerId) {
-        this.#customerId = customerId;
+    set customerName(customerName) {
+        this.#customerName = customerName;
     }
 
     get itemName() {

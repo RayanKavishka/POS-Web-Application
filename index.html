@@ -383,6 +383,7 @@
           <div class="d-flex bg-black p-3 rounded-4">
             <input id="searchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Customer" aria-label="Search"/>
             <button id="customerSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+            <button id="customerRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
           </div>
         </div>
 
@@ -467,6 +468,7 @@
           <div class="d-flex bg-black p-3 rounded-4">
             <input id="itemSearchField" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Item" aria-label="Search"/>
             <button id="itemSearch" class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+            <button id="itemRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
           </div>
 
         </div>
@@ -495,9 +497,10 @@
   <!-- Order History Section -->
   <section id="OrderHistorySection" class="content mt-15">
 
-    <div class="d-flex bg-black p-3 rounded-4">
-      <input class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Order by Date" aria-label="Search"/>
-      <button class="btn btn-outline-warning rounded-5" type="submit">Search</button>
+    <div class="d-flex bg-black p-3 rounded-4 gap-1">
+      <input id="orderSearchBar" class="form-control rounded-5 me-2 bg-dark text-white search" type="search" placeholder="Search Order by Date" aria-label="Search"/>
+      <button id="orderSearchBtn" class="btn btn-outline-warning rounded-5" type="button">Search</button>
+      <button id="orderRefreshBtn" class="btn btn-info rounded-5" type="button">Refresh</button>
     </div>
 
     <div class="bg-black p-3 mt-3 rounded-4">
